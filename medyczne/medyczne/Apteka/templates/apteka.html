@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% extends 'szablon.html' %}
+
+{% block apteka %}
+{% if apteka_user %}
+
+    <h1> {{ apteka_user.nazwa }} </h1>
+
+    <p> Producent: {{ apteka_user.producent }} </p>
+    <p> {{ apteka_user.opis }} </p>
+    <p> {{ apteka_user.cena }} </p>
+
+    {% else %}
+  <p>Nie ma produktu o takim id.</p>
+    {% endif %}
+  {% endblock apteka %}
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends 'szablon.html' %}
+
+{% block apteka %}
+
+    {% if kategoria_apteka %}
+
+        {% for apteka in kategoria_apteka %}
+
+            <p><a href = "/apteka/{{ apteka.id }}/"> {{ apteka.nazwa }} </a></p>
+        {% endfor %}
+
+    {% else %}
+
+    {% endif %}
+
+{% endblock %}
+
+
+
+</body>
+</html>
