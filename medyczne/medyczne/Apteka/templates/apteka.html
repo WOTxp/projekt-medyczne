@@ -6,15 +6,16 @@
 </head>
 <body>
 
-
 {% extends 'szablon.html' %}
 
 {% block apteka %}
+<p>{{apteka_user}}</p>
 {% if apteka_user %}
 
     <h1> {{ apteka_user.nazwa }} </h1>
 
     <p> Producent: {{ apteka_user.producent }} </p>
+    <p> {{ apteka_user.kategoria }} </p>
     <p> {{ apteka_user.opis }} </p>
     <p> {{ apteka_user.cena }} </p>
 

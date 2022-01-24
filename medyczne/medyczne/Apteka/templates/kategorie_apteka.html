@@ -9,21 +9,24 @@
 {% extends 'szablon.html' %}
 
 {% block apteka %}
+{% if kategoria_user %}
+    <span style="font-size: xx-large">{{kategoria_user}}</span>
+    <p>{{apteka}}</p>
+    <ul>
+        {% for lek in apteka %}
+            <li>tester</li>
+            {% if lek.kategoria == kategoria_user %}
+                <li><a href = "/apteka/{{ apteka.id }}/"> {{ lek.nazwa }} </a></li>
 
-    {% if kategoria_apteka %}
-
-        {% for apteka in kategoria_apteka %}
-
-            <p><a href = "/apteka/{{ apteka.id }}/"> {{ apteka.nazwa }} </a></p>
+            {% else %}
+            {% endif %}
         {% endfor %}
+    </ul>
 
-    {% else %}
-
-    {% endif %}
-
-{% endblock %}
-
-
+{% else %}
+    <p>Nie ma takiej kategorii.</p>
+{% endif %}
+{% endblock apteka%}
 
 </body>
 </html>
