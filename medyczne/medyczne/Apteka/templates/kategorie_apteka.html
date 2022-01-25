@@ -11,12 +11,10 @@
 {% block apteka %}
 {% if kategoria_user %}
     <span style="font-size: xx-large">{{kategoria_user}}</span>
-    <p>{{apteka}}</p>
     <ul>
-        {% for lek in apteka %}
-            <li>tester</li>
+        {% for lek in kategoria_produkt %}
             {% if lek.kategoria == kategoria_user %}
-                <li><a href = "/apteka/{{ apteka.id }}/"> {{ lek.nazwa }} </a></li>
+                <li><a href = "/apteka/{{ lek.id }}/"> {{ lek.nazwa }} </a></li>
 
             {% else %}
             {% endif %}

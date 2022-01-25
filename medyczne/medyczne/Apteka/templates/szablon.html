@@ -10,17 +10,19 @@
 
 <div>
     <h1><a href="/">Strona główna</a><a href = "/">  wyszukiwarka</a><a href = "/">    wyloguj</a>
-        <img src="photo/logo.jpg" alt="I nie dziala." width="300" height="150" style="float: right></h1>
+        <img src="{{obrazek.url}}" alt="Obrazek" width="300" height="100" style="float: right"></h1>
 </div>
+<p>{{obraz.obrazek.url}}</p>
 <div style="clear:both"></div>
 <div style="width:200px; float:left">
     <h3> MENU </h3>
+    <p>{{obraz}}</p>
     {% for kat in kategorie %}
     <p><a href = "/kategoria/{{ kat.id }}"> {{ kat.nazwa }} </a> </p>
     {% endfor %}
 </div>
 
-<div style="width:700; float:left">
+<div style="width:300; overflow: hidden; float:left">
 
       {% block apteka %} {% endblock apteka %}
   </div>

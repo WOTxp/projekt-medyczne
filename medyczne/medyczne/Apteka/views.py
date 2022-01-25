@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Apteka, Kategoria
+from .models import Apteka, Kategoria, Obrazy
 
 
 # Create your views here.
@@ -11,7 +11,9 @@ def index(request):
     kat = Apteka.objects.filter(kategoria=1)
     null = Apteka.objects.filter(kategoria__isnull=False)
     kategorie = Kategoria.objects.all()
-    dane = {'kategorie': kategorie}
+    obrazek = Obrazy.objects.get(pk=1)
+    dane = {'kategorie': kategorie,
+            'obraz': obrazek}
     return render(request, 'szablon.html', dane)
 
 
@@ -30,3 +32,10 @@ def apteka(request, id):
     kategorie = Kategoria.objects.all()
     dane = {'apteka_user': apteka_user, 'kategorie': kategorie}
     return render(request, 'apteka.html', dane)
+
+"""
+def obraz(request, x):
+    apteka_user = Apteka.objects.get(pk=x)
+    dane = {'apteka_user': apteka_user}
+    return render(request, 'apteka.html', dane)
+"""

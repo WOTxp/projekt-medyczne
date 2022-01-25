@@ -14,14 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-
 from django.contrib import admin
 from django.urls import path
 from Apteka.views import *
 
-#from Apteka.views import apteka
+from django.conf import settings
+from django.conf.urls.static import static
 
-#from Apteka.views import kategoria
+# from Apteka.views import apteka
+
+# from Apteka.views import kategoria
 
 
 urlpatterns = [
@@ -29,4 +31,9 @@ urlpatterns = [
     path('', index, name='index'),
     path('kategoria/<id>/', kategoria, name='kategoria'),
     path('apteka/<id>/', apteka, name='apteka'),
+    #path('obrazy/<x>/', obraz, name='obrazy')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
