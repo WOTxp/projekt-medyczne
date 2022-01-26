@@ -10,13 +10,11 @@
 
 <div>
     <h1><a href="/">Strona główna</a><a href = "/">  wyszukiwarka</a><a href = "/">    wyloguj</a>
-        <img src="{{obrazek.url}}" alt="Obrazek" width="300" height="100" style="float: right"></h1>
+        <img src="{{obraz.obraz.url}}" alt="Obrazek" width="300" height="100" style="float: right"></h1>
 </div>
-<p>{{obraz.obrazek.url}}</p>
 <div style="clear:both"></div>
 <div style="width:200px; float:left">
     <h3> MENU </h3>
-    <p>{{obraz}}</p>
     {% for kat in kategorie %}
     <p><a href = "/kategoria/{{ kat.id }}"> {{ kat.nazwa }} </a> </p>
     {% endfor %}

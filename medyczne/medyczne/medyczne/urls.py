@@ -31,7 +31,6 @@ urlpatterns = [
     path('', index, name='index'),
     path('kategoria/<id>/', kategoria, name='kategoria'),
     path('apteka/<id>/', apteka, name='apteka'),
-    #path('obrazy/<x>/', obraz, name='obrazy')
 ]
 
 if settings.DEBUG:
