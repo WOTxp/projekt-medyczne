@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends 'szablon.html' %}
+
+{% block apteka %}
+
+{% if szukane %}
+    <h1>Wyniki dla: {{szukane}}</h1>
+   <ul>
+    {% for lek in wynik %}
+        <li><a href = "/apteka/{{ lek.id }}/"> {{ lek.nazwa }} </a></li>
+    {% endfor %}
+
+
+{% else %}
+    <h1>Nie wprowadzono napisu.</h1>
+{% endif %}
+
+{% endblock apteka%}
+
+</body>
+</html>

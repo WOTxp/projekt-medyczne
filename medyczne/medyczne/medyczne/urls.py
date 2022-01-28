@@ -31,6 +31,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('kategoria/<id>/', kategoria, name='kategoria'),
     path('apteka/<id>/', apteka, name='apteka'),
+    path('szukaj/', szukaj, name='szukaj')
 ]
 
 if settings.DEBUG:

@@ -9,8 +9,15 @@
 <body style="background-color: aqua;">
 
 <div>
-    <h1><a href="/">Strona główna</a><a href = "/">  wyszukiwarka</a><a href = "/">    wyloguj</a>
-        <img src="{{obraz.obraz.url}}" alt="Obrazek" width="300" height="100" style="float: right"></h1>
+    <h1>
+        <a href="/">Strona główna</a><a href = "/">    wyloguj</a>
+        <img src="{{obraz.obraz.url}}" alt="Obrazek" width="300" height="100" style="float: right">
+        <form class="f-flex" method=POST action="{% url 'szukaj' %}">
+            {% csrf_token %}
+            <input class="form-control me-2" type="Search" placeholder="Znajdź lek" aria-label="Search" name="szukane">
+            <button class="btn btn-outline-success" type="submit">Szukaj</button>
+        </form>
+    </h1>
 </div>
 <div style="clear:both"></div>
 <div style="width:200px; float:left">
