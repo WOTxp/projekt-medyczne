@@ -1,3 +1,3 @@
 # projekt-medyczne
-Damian Abramek
-Dominik Matyjasek
+Damian Abramek      - WOTxp
+Dominik Matyjasek   - Kartadzo
