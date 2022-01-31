@@ -31,7 +31,10 @@ urlpatterns = [
     path('', index, name='index'),
     path('kategoria/<id>/', kategoria, name='kategoria'),
     path('apteka/<id>/', apteka, name='apteka'),
-    path('szukaj/', szukaj, name='szukaj')
+    path('szukaj/', szukaj, name='szukaj'),
+    path('logowanie/', logowanie, name='logowanie'),
+    path('rejestracja/', rejestracja, name='rejestracja'),
+    path('wylogowywanie/', wylogowywanie, name='wylogowywanie')
 ]
 
 if settings.DEBUG:

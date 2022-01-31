@@ -55,3 +55,17 @@ class Obrazy(models.Model):
     class Meta:
         verbose_name = "Obraz"
         verbose_name_plural = "Obrazy"
+
+
+class Recepty(models.Model):
+    def __str__(self):
+        return self.nazwa
+
+    nazwa = models.CharField(max_length=60)
+    opis = models.TextField(blank=False)
+    nabyto = models.BooleanField(default=False)
+    komu_zapisano = models.TextField(blank=False)
+
+    class Meta:
+        verbose_name = "Recepta"
+        verbose_name_plural = "Recepty"
