@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRTS   = [
+    "medyczne/medyczne/Apteka/static",
+]
 
 # Application definition
 
