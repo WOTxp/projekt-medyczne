@@ -11,10 +11,10 @@
 
 <div style="background-color: grey; min-width: 50%; max-width: 83%; margin-left: 7%;">
 {% block navigation %}
-    <h1 style="margin-left: 2%; margin-right: 2%;">
+    <h1 style="margin-left: 2%;">
         <a href="/">  Strona główna  </a>
         <img src="{{obraz.obraz.url}}" alt="Obrazek" width="300" height="100" style="float: right">
-            <span style="float: right" id="hello-msg"><a href="{% url 'wylogowywanie' %}" > Wyloguj </a></span>
+            <span style="float: right" id="hello-msg"><a href="{% url 'wylogowywanie' %}" >  Wyloguj </a></span>
             <span style="float: right" color="black">Witaj, {{request.user}} </span>
         <form class="f-flex" method=POST action="{% url 'szukaj' %}">
             {% csrf_token %}
