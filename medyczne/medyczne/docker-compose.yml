@@ -1,4 +1,4 @@
-version: "4.4.3"
+version: "3.7"
 
 services:
   db:
@@ -7,8 +7,10 @@ services:
       - POSTGRES_DB=medyczne
       - POSTGRES_USER=medyczne
       - POSTGRES_PASSWORD=medyczne123
+    ports:
+      - "5432:5432"
   web:
-    build: medyczne
+    build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code/

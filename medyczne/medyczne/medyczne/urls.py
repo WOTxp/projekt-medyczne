@@ -21,11 +21,6 @@ from Apteka.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
-# from Apteka.views import apteka
-
-# from Apteka.views import kategoria
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
