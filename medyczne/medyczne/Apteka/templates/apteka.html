@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
 {% extends 'szablon.html' %}
 
 {% block apteka %}
 {% if apteka_user %}
-
+<div style="margin-left: 5%; margin-right: 5%;">
     <h1> {{ apteka_user.nazwa }} </h1>
     <p> <img src="{{apteka_user.obraz.url}}" alt="Obrazek" width="300" height="250"> </p>
 
@@ -18,11 +10,8 @@
     <p> {{ apteka_user.kategoria }} </p>
     <p> {{ apteka_user.opis }} </p>
     <p> cena: {{ apteka_user.cena }}zł </p>
-
+</div>
 {% else %}
     <p>Nie ma produktu o takim id.</p>
 {% endif %}
 {% endblock apteka %}
-
-</body>
-</html>

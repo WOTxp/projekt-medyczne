@@ -61,38 +61,45 @@ def index(request):
     null = Apteka.objects.filter(kategoria__isnull=False)
     kategorie = Kategoria.objects.all()
     obrazek = Obrazy.objects.get(id=1)  # Logo
+    tlo = Obrazy.objects.get(id=2)  # tlo
     dane = {'kategorie': kategorie,
-            'obraz': obrazek}
+            'obraz': obrazek,
+            'tlo': tlo}
     return render(request, 'szablon.html', dane)
 
 
 @login_required(login_url='logowanie')
 def kategoria(request, id):
     obrazek = Obrazy.objects.get(id=1)  # Logo
+    tlo = Obrazy.objects.get(id=2)  # tlo
     kategoria_user = Kategoria.objects.get(pk=id)
     kategoria_apteka = Apteka.objects.filter(kategoria=kategoria_user).order_by('nazwa')
     kategorie = Kategoria.objects.all()
     dane = {'kategoria_user': kategoria_user,
             'kategoria_produkt': kategoria_apteka,
             'kategorie': kategorie,
-            'obraz': obrazek}
+            'obraz': obrazek,
+            'tlo': tlo}
     return render(request, 'kategorie_apteka.html', dane)
 
 
 @login_required(login_url='logowanie')
 def apteka(request, id):
     obrazek = Obrazy.objects.get(id=1)  # Logo
+    tlo = Obrazy.objects.get(id=2)  # tlo
     apteka_user = Apteka.objects.get(pk=id)
     kategorie = Kategoria.objects.all()
     dane = {'apteka_user': apteka_user,
             'kategorie': kategorie,
-            'obraz': obrazek}
+            'obraz': obrazek,
+            'tlo': tlo}
     return render(request, 'apteka.html', dane)
 
 
 @login_required(login_url='logowanie')
 def szukaj(request):
     obrazek = Obrazy.objects.get(id=1)  # Logo
+    tlo = Obrazy.objects.get(id=2)  # tlo
     kategorie = Kategoria.objects.all()
     if request.method == "POST":
         szukana = request.POST['szukane']
@@ -100,9 +107,11 @@ def szukaj(request):
         dane = {'kategorie': kategorie,
                 'obraz': obrazek,
                 'szukane': szukana,
-                'wynik': wynik}
+                'wynik': wynik,
+            'tlo': tlo}
         return render(request, 'search.html', dane)
     else:
         dane = {'kategorie': kategorie,
-                'obraz': obrazek}
+                'obraz': obrazek,
+            'tlo': tlo}
         return render(request, 'search.html', dane)

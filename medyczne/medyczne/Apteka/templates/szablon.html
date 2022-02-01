@@ -4,19 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
 
 </head>
-<body style="background-color: aqua;">
-<style>
-    #hello-msg{
-    font-size: 20px;
-    color: #fff;
-    margin-right:20px
-</style>
+<body style="background-image:url('{{tlo.obraz.url}}')">
 
-<div>
-    <h1>
+<div style="background-color: grey; min-width: 50%; max-width: 83%; margin-left: 7%;">
+{% block navigation %}
+    <h1 style="margin-left: 2%; margin-right: 2%;">
         <a href="/">  Strona główna  </a>
         <img src="{{obraz.obraz.url}}" alt="Obrazek" width="300" height="100" style="float: right">
             <span style="float: right" id="hello-msg"><a href="{% url 'wylogowywanie' %}" > Wyloguj </a></span>
@@ -27,16 +22,22 @@
             <button class="btn btn-outline-success" type="submit">Szukaj</button>
         </form>
     </h1>
-</div>
-<div style="clear:both"></div>
-<div style="width:200px; float:left">
-    <h3> MENU </h3>
-    {% for kat in kategorie %}
-    <p><a href = "/kategoria/{{ kat.id }}"> {{ kat.nazwa }} </a> </p>
-    {% endfor %}
+{% endblock navigation %}
 </div>
 
-<div style="width:300; overflow: hidden; float:left">
+<div style="clear:both"></div>
+<div style="width:200px; float:left; margin-left: 7%; background-color: grey; max-width: 15%;">
+{% block sidebar %}
+    <div style="margin-left: 5%;">
+    <h2> MENU </h2>
+    {% for kat in kategorie %}
+    <p class="sidebar-nav"><a href = "/kategoria/{{ kat.id }}"> {{ kat.nazwa }} </a> </p>
+    {% endfor %}
+    </div>
+{% endblock sidebar %}
+</div>
+
+<div style="width:200; overflow: hidden; float:center; background-color: grey; max-width: 70%;">
 
       {% block apteka %} {% endblock apteka %}
   </div>
